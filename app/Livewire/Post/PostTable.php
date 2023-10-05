@@ -16,6 +16,7 @@ class PostTable extends Component
     public $sortOrder = "desc";
     public $sortLink = '';
     public $searchKeyword = '';
+    public $showModal = false;
     public $set_id;
 
     public function render()
@@ -31,6 +32,11 @@ class PostTable extends Component
     }
 
     public function delete($id)
+    {
+        $this->showModal = true;
+    }
+
+    public function destroy($id)
     {
 
         Post::destroy($id);
