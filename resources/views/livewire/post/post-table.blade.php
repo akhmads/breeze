@@ -64,14 +64,13 @@
 
     <div x-data>
         <div x-cloak x-show="$wire.showModal" class="w-full h-full fixed inset-0 z-30 flex items-center justify-center overflow-auto bg-black bg-opacity-50">
-            <div x-cloak x-show="$wire.showModal" x-transition.opacity.duration.300ms class="w-full sm:w-[600px] mx-auto shadow-lg overflow-y-auto bg-white border border-gray-200 rounded-lg py-6 px-8">
-            <form wire:submit.prevent="store">
-            <div class="text-lg">Delete this item?</div>
-            <div class="flex justify-center gap-4">
-                {{-- <button type="button" wire:click="closeModal" class="bg-yellow-500 py-2 px-4 text-white rounded-lg hover:bg-yellow-400">Close</button> --}}
-                <button type="submit" class="bg-blue-500 py-2 px-4 text-white rounded-lg hover:bg-blue-400">Save</button>
-            </div>
-            </form>
+            <div x-cloak x-show="$wire.showModal" x-transition.opacity.duration.300ms class="w-full sm:w-[400px] mx-auto shadow-lg overflow-y-auto bg-white border border-gray-200 rounded-lg py-6 px-8">
+                <div class="text-lg mb-5">Delete this item?</div>
+                <div class="flex justify-center gap-5">
+                    {{-- <button type="button" wire:click="closeModal" class="bg-yellow-500 py-2 px-4 text-white rounded-lg hover:bg-yellow-400">Close</button> --}}
+                    <button type="button" wire:click="closeModal" class="bg-yellow-500 py-2 px-4 text-white rounded-lg hover:bg-yellow-400">No</button>
+                    <button type="button" wire:click="destroy" class="bg-red-500 py-2 px-4 text-white rounded-lg hover:bg-red-400">Yes</button>
+                </div>
             </div>
         </div>
     </div>

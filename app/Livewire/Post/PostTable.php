@@ -34,13 +34,20 @@ class PostTable extends Component
     public function delete($id)
     {
         $this->showModal = true;
+        $this->set_id = $id;
     }
 
-    public function destroy($id)
+    public function closeModal()
+    {
+        $this->showModal = false;
+        $this->set_id = null;
+    }
+
+    public function destroy()
     {
 
-        Post::destroy($id);
-        session()->flash('success', __('User deleted.'));
+        Post::destroy($this->set_id);
+        session()->flash('success', __('Post deleted.'));
         return redirect()->to('/post');
     }
 }

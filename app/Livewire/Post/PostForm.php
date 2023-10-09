@@ -56,6 +56,6 @@ class PostForm extends Component
             $code->update($valid);
         }
 
-        session()->flash('success', __('Saved'));
+        session()->flash('success', __('Post saved'));
     }
 }
